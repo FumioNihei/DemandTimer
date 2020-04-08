@@ -35,8 +35,11 @@
             // var msg = `${totalElapsedDays}:${ TimeFormatter(diff.getHours())}:${ TimeFormatter(diff.getMinutes()) }:${ TimeFormatter(diff.getSeconds()) }`;
             var msg = `${totalElapsedDays}d ${ TimeFormatter(diff.getHours())}h ${ TimeFormatter(diff.getMinutes()) }m ${ TimeFormatter(diff.getSeconds()) }s`;
 
-            document.getElementById("PassageArea").innerHTML = msg;
-            document.getElementById("PassageArea2").innerHTML = msg;
+
+            for (let index = 0; index < 7; index++) {
+                const MessageArea = `MessageArea_${index}`;
+                document.getElementById(MessageArea).innerHTML = msg;
+            }
         }
 
         function StartShowing() {
@@ -60,22 +63,62 @@
 
             <li>
                 <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-                    <img src="images/09cb67800086ea20e6e7c24ec89a3134df0a9058.jpg" alt="" uk-cover>
+                    <img src="images/0.jpg" alt="" uk-cover>
                 </div>
                 <div class="uk-position-center uk-position-midium uk-text-center uk-light">
-                    <h1 id="PassageArea" class="uk-margin-remove"></h1>
+                    <h1 id="MessageArea_0" class="uk-margin-remove"></h1>
                     <!-- <p class="uk-margin-remove">something</p> -->
                 </div>
             </li>
             <li>
-                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-                    <img src="images/iPYNUPUK3vU67NwwXFeV.jpg" alt="" uk-cover>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right">
+                    <img src="images/1.jpg" alt="" uk-cover>
                 </div>
                 <div class="uk-position-center uk-position-midium uk-text-center uk-light">
-                    <h1 id="PassageArea2" class="uk-margin-remove"></h1>
-                    <!-- <p class="uk-margin-remove">something</p> -->
+                    <h1 id="MessageArea_1" class="uk-margin-remove"></h1>
                 </div>
             </li>
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-bottom-left">
+                    <img src="images/2.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-midium uk-text-center uk-light">
+                    <h1 id="MessageArea_2" class="uk-margin-remove"></h1>
+                </div>
+            </li>
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-bottom-right">
+                    <img src="images/3.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-midium uk-text-center uk-light">
+                    <h1 id="MessageArea_3" class="uk-margin-remove"></h1>
+                </div>
+            </li>
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-left">
+                    <img src="images/4.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-midium uk-text-center uk-light">
+                    <h1 id="MessageArea_4" class="uk-margin-remove"></h1>
+                </div>
+            </li>
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-right">
+                    <img src="images/5.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-midium uk-text-center uk-light">
+                    <h1 id="MessageArea_5" class="uk-margin-remove"></h1>
+                </div>
+            </li>
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                    <img src="images/6.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-midium uk-text-center uk-light">
+                    <h1 id="MessageArea_6" class="uk-margin-remove"></h1>
+                </div>
+            </li>
+
         </ul>
     
         <div class="uk-light">
