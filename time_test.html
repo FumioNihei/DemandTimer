@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title> <!-- そうやってソース見て... -->
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" /> <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+
+    <script>
+
+        var LastDay = new Date( 2020, 3-1, 26, 20, 0, 0, 0 );
+
+        // var LastDay = new Date( 2020, 4-1, 10, 0, 0, 0, 0 );
+
+        function TimeFormatter(time) {
+            // return ("0" + time ).slice( -2 );
+            return time;
+        }
+
+        function ShowPassage() {
+
+            var now = new Date();
+            // var now = new Date( 2020, 4-1, 11, 0, 0, 0, 0 );
+
+            var diff = new Date( now - LastDay );
+
+            var days = parseInt( diff / (24*60*60*1000) );
+            var hours = parseInt( diff / (60*60*1000) );
+            var minutes = parseInt( diff / (60*1000) );
+            var seconds = parseInt( diff / (1000) );
+
+            var d = days;
+            var h = hours % 24;
+            var m = minutes % 60;
+            var s = seconds % 60;
+
+            // console.log( `${d}, ${h}, ${m}, ${s}` );
+
+            var totalElapsedDays = Math.ceil( diff / 86400000 );
+
+            // diff.toLocaleString()
+            // var msg = `${totalElapsedDays * 24 + diff.getHours()}:${diff.getMinutes()}:${diff.getSeconds()}`;
+            // var msg = `${totalElapsedDays}:${ TimeFormatter(diff.getHours())}:${ TimeFormatter(diff.getMinutes()) }:${ TimeFormatter(diff.getSeconds()) }`;
+            // var msg = `${totalElapsedDays}d ${ TimeFormatter(diff.getHours())}h ${ TimeFormatter(diff.getMinutes()) }m ${ TimeFormatter(diff.getSeconds()) }s`;
+
+            var msg = `${d}d ${ TimeFormatter(h) }h ${ TimeFormatter(m) }m ${ TimeFormatter(s) }s`;
+
+            document.getElementById( `MessageArea_0` ).innerHTML = msg;
+
+
+        }
+
+        function StartShowing() {
+            PassageID = setInterval('ShowPassage()', 100);
+        }
+
+        function StopShowing() {
+            clearInterval(PassageID);   // タイマーのクリア
+        }
+    </script>
+
+    
+
+</head>
+
+<body>
+
+    <h1 id="MessageArea_0" class="uk-margin-remove"></h1>
+
+    <script>
+        StartShowing();
+    </script>
+
+
+
+    <!-- この時間がなんの時間かって？ -->
+    <!-- ぶーちゃんたちに会えていない時間の累計だよ（にっこり） -->
+
+</body>
+
+</html>

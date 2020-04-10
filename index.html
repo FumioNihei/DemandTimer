@@ -28,12 +28,26 @@
 
             var diff = new Date( now - LastDay );
 
+            var days = parseInt( diff / (24*60*60*1000) );
+            var hours = parseInt( diff / (60*60*1000) );
+            var minutes = parseInt( diff / (60*1000) );
+            var seconds = parseInt( diff / (1000) );
+
+            var d = days;
+            var h = hours % 24;
+            var m = minutes % 60;
+            var s = seconds % 60;
+
+            // console.log( `${d}, ${h}, ${m}, ${s}` );
+
             var totalElapsedDays = Math.ceil( diff / 86400000 );
 
             // diff.toLocaleString()
             // var msg = `${totalElapsedDays * 24 + diff.getHours()}:${diff.getMinutes()}:${diff.getSeconds()}`;
             // var msg = `${totalElapsedDays}:${ TimeFormatter(diff.getHours())}:${ TimeFormatter(diff.getMinutes()) }:${ TimeFormatter(diff.getSeconds()) }`;
-            var msg = `${totalElapsedDays}d ${ TimeFormatter(diff.getHours())}h ${ TimeFormatter(diff.getMinutes()) }m ${ TimeFormatter(diff.getSeconds()) }s`;
+            // var msg = `${totalElapsedDays}d ${ TimeFormatter(diff.getHours())}h ${ TimeFormatter(diff.getMinutes()) }m ${ TimeFormatter(diff.getSeconds()) }s`;
+
+            var msg = `${d}d ${ TimeFormatter(h) }h ${ TimeFormatter(m) }m ${ TimeFormatter(s) }s`;
 
 
             for (let index = 0; index < 7; index++) {
